@@ -1,0 +1,542 @@
+2019-12-04 09:46:48.805  INFO 5289 --- [main] com.routeplanner.MainAppApplication      : Starting MainAppApplication on CIC00290.local with PID 5289 (/Users/paulbickell/Documents/JavaWorkspace3/MainApp/target/classes started by paulbickell in /Users/paulbickell/Documents/JavaWorkspace3/MainApp)
+2019-12-04 09:46:48.812  INFO 5289 --- [main] com.routeplanner.MainAppApplication      : No active profile set, falling back to default profiles: default
+2019-12-04 09:46:49.247  INFO 5289 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-04 09:46:49.342  INFO 5289 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87ms. Found 7 repository interfaces.
+2019-12-04 09:46:49.764  INFO 5289 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cf91eca0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-04 09:46:50.028  INFO 5289 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-04 09:46:50.062  INFO 5289 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-04 09:46:50.062  INFO 5289 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-12-04 09:46:50.143  INFO 5289 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-04 09:46:50.144  INFO 5289 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1287 ms
+2019-12-04 09:46:50.306  INFO 5289 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-04 09:46:50.762  INFO 5289 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-04 09:46:50.823  INFO 5289 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-12-04 09:46:50.903  INFO 5289 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2019-12-04 09:46:50.904  INFO 5289 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-12-04 09:46:51.092  INFO 5289 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-12-04 09:46:51.268  INFO 5289 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-04 09:46:52.332  INFO 5289 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-04 09:46:52.694  INFO 5289 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-12-04 09:46:53.151  INFO 5289 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-04 09:46:53.208  WARN 5289 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-04 09:46:53.422  INFO 5289 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-04 09:46:53.424  INFO 5289 --- [main] com.routeplanner.MainAppApplication      : Started MainAppApplication in 10.014 seconds (JVM running for 15.374)
+2019-12-04 09:48:55.350  INFO 5289 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-04 09:48:55.350  INFO 5289 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-04 09:48:55.362  INFO 5289 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-12-04 09:49:16.845  INFO 5289 --- [http-nio-8080-exec-3] c.r.ctrl.RoutePlannerController          : making a route query: start = Angel --> dest = Barking
+2019-12-04 09:49:16.849  INFO 5289 --- [http-nio-8080-exec-3] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 09:49:16.853  INFO 5289 --- [http-nio-8080-exec-3] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Angel
+End    Barking
+From Angel take the Northern to Moorgate for 2 stops.
+From Moorgate take the Hammersmith and City to Liverpool Street for 1 stop.
+From Liverpool Street take the Central to Stratford for 3 stops.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the District to Barking for 4 stops.
+Changes = 4
+Total stops = 11
+
+
+Start  Angel
+End    Barking
+From Angel take the Northern to Moorgate for 2 stops.
+From Moorgate take the Metropolitan to Liverpool Street for 1 stop.
+From Liverpool Street take the Central to Stratford for 3 stops.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the District to Barking for 4 stops.
+Changes = 4
+Total stops = 11
+
+
+Start  Angel
+End    Barking
+From Angel take the Northern to Moorgate for 2 stops.
+From Moorgate take the Circle to Liverpool Street for 1 stop.
+From Liverpool Street take the Central to Stratford for 3 stops.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the District to Barking for 4 stops.
+Changes = 4
+Total stops = 11
+
+
+Start  Angel
+End    Barking
+From Angel take the Northern to Moorgate for 2 stops.
+From Moorgate take the Hammersmith and City to Liverpool Street for 1 stop.
+From Liverpool Street take the Central to Stratford for 3 stops.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the Hammersmith and City to Barking for 4 stops.
+Changes = 4
+Total stops = 11
+
+
+Start  Angel
+End    Barking
+From Angel take the Northern to Moorgate for 2 stops.
+From Moorgate take the Metropolitan to Liverpool Street for 1 stop.
+From Liverpool Street take the Central to Stratford for 3 stops.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the Hammersmith and City to Barking for 4 stops.
+Changes = 4
+Total stops = 11
+
+
+Start  Angel
+End    Barking
+From Angel take the Northern to Moorgate for 2 stops.
+From Moorgate take the Circle to Liverpool Street for 1 stop.
+From Liverpool Street take the Central to Stratford for 3 stops.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the Hammersmith and City to Barking for 4 stops.
+Changes = 4
+Total stops = 11
+
+
+2019-12-04 09:50:11.666  INFO 5289 --- [http-nio-8080-exec-6] c.r.ctrl.RoutePlannerController          : making a route query: start = Alperton --> dest = Becontree
+2019-12-04 09:50:11.667  INFO 5289 --- [http-nio-8080-exec-6] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 09:50:12.023  INFO 5289 --- [http-nio-8080-exec-6] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Alperton
+End    Becontree
+From Alperton take the Piccadilly to Green Park for 13 stops.
+From Green Park take the Jubilee to Waterloo for 2 stops.
+From Waterloo take the Waterloo and City to Bank for 1 stop.
+From Bank take the Central to Stratford for 4 stops.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the District to Becontree for 6 stops.
+Changes = 5
+Total stops = 27
+
+
+2019-12-04 09:52:57.239  INFO 5289 --- [http-nio-8080-exec-3] c.r.ctrl.RoutePlannerController          : making a route query: start = Angel --> dest = Blackfriars
+2019-12-04 09:52:57.240  INFO 5289 --- [http-nio-8080-exec-3] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 09:52:57.241  INFO 5289 --- [http-nio-8080-exec-3] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Angel
+End    Blackfriars
+From Angel take the Northern to Bank for 3 stops.
+From Bank take the Waterloo and City to Waterloo for 1 stop.
+From Waterloo take the Northern to Embankment for 1 stop.
+From Embankment take the District to Blackfriars for 2 stops.
+Changes = 3
+Total stops = 7
+
+
+Start  Angel
+End    Blackfriars
+From Angel take the Northern to Bank for 3 stops.
+From Bank take the Waterloo and City to Waterloo for 1 stop.
+From Waterloo take the Bakerloo to Embankment for 1 stop.
+From Embankment take the District to Blackfriars for 2 stops.
+Changes = 3
+Total stops = 7
+
+
+Start  Angel
+End    Blackfriars
+From Angel take the Northern to Bank for 3 stops.
+From Bank take the Waterloo and City to Waterloo for 1 stop.
+From Waterloo take the Northern to Embankment for 1 stop.
+From Embankment take the Circle to Blackfriars for 2 stops.
+Changes = 3
+Total stops = 7
+
+
+Start  Angel
+End    Blackfriars
+From Angel take the Northern to Bank for 3 stops.
+From Bank take the Waterloo and City to Waterloo for 1 stop.
+From Waterloo take the Bakerloo to Embankment for 1 stop.
+From Embankment take the Circle to Blackfriars for 2 stops.
+Changes = 3
+Total stops = 7
+
+
+2019-12-04 09:55:12.941  INFO 5289 --- [http-nio-8080-exec-8] c.r.ctrl.RoutePlannerController          : making a route query: start = Alperton --> dest = Beckton Park
+2019-12-04 09:55:12.941  INFO 5289 --- [http-nio-8080-exec-8] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 09:55:12.955  INFO 5289 --- [http-nio-8080-exec-8] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Alperton
+End    Beckton Park
+From Alperton take the Piccadilly to Green Park for 13 stops.
+From Green Park take the Jubilee to Canning Town for 9 stops.
+From Canning Town take the Docklands Light Railway to Beckton Park for 5 stops.
+Changes = 2
+Total stops = 27
+
+
+2019-12-04 09:55:53.025  INFO 5289 --- [http-nio-8080-exec-10] c.r.ctrl.RoutePlannerController          : making a route query: start = Angel --> dest = Blackwall
+2019-12-04 09:55:53.025  INFO 5289 --- [http-nio-8080-exec-10] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 09:55:53.025  INFO 5289 --- [http-nio-8080-exec-10] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Angel
+End    Blackwall
+From Angel take the Northern to Bank for 3 stops.
+From Bank take the Docklands Light Railway to Poplar for 4 stops.
+From Poplar take the Docklands Light Railway to Blackwall for 1 stop.
+Changes = 2
+Total stops = 8
+
+
+2019-12-04 09:56:18.335  INFO 5289 --- [http-nio-8080-exec-2] c.r.ctrl.RoutePlannerController          : making a route query: start = Alperton --> dest = Beckton
+2019-12-04 09:56:18.335  INFO 5289 --- [http-nio-8080-exec-2] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 09:56:18.349  INFO 5289 --- [http-nio-8080-exec-2] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Alperton
+End    Beckton
+From Alperton take the Piccadilly to Green Park for 13 stops.
+From Green Park take the Jubilee to Canning Town for 9 stops.
+From Canning Town take the Docklands Light Railway to Beckton for 8 stops.
+Changes = 2
+Total stops = 30
+
+
+2019-12-04 09:57:11.545  INFO 5289 --- [http-nio-8080-exec-4] c.r.ctrl.RoutePlannerController          : making a route query: start = Aldgate East --> dest = Arsenal
+2019-12-04 09:57:11.545  INFO 5289 --- [http-nio-8080-exec-4] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 09:57:11.545  INFO 5289 --- [http-nio-8080-exec-4] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Aldgate East
+End    Arsenal
+From Aldgate East take the Hammersmith and City to King's Cross St. Pancras for 5 stops.
+From King's Cross St. Pancras take the Piccadilly to Arsenal for 3 stops.
+Changes = 1
+Total stops = 8
+
+
+2019-12-04 10:05:38.411  INFO 5289 --- [http-nio-8080-exec-10] c.r.ctrl.RoutePlannerController          : making a route query: start = Alperton --> dest = Barkingside
+2019-12-04 10:05:38.412  INFO 5289 --- [http-nio-8080-exec-10] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 10:05:38.415  INFO 5289 --- [http-nio-8080-exec-10] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Alperton
+End    Barkingside
+From Alperton take the Piccadilly to Green Park for 13 stops.
+From Green Park take the Jubilee to Waterloo for 2 stops.
+From Waterloo take the Waterloo and City to Bank for 1 stop.
+From Bank take the Central to Leytonstone for 6 stops.
+From Leytonstone take the Central to Barkingside for 5 stops.
+Changes = 4
+Total stops = 27
+
+
+2019-12-04 10:05:56.500  INFO 5289 --- [http-nio-8080-exec-1] c.r.ctrl.RoutePlannerController          : making a route query: start = Bank --> dest = Barons Court
+2019-12-04 10:05:56.500  INFO 5289 --- [http-nio-8080-exec-1] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 10:05:56.501  INFO 5289 --- [http-nio-8080-exec-1] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Bank
+End    Barons Court
+From Bank take the Waterloo and City to Waterloo for 1 stop.
+From Waterloo take the Jubilee to Green Park for 2 stops.
+From Green Park take the Piccadilly to Barons Court for 6 stops.
+Changes = 2
+Total stops = 9
+
+
+2019-12-04 10:23:58.331  INFO 5289 --- [http-nio-8080-exec-3] c.r.ctrl.RoutePlannerController          : making a route query: start = All Saints --> dest = Bayswater
+2019-12-04 10:23:58.332  INFO 5289 --- [http-nio-8080-exec-3] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 10:23:58.332  INFO 5289 --- [http-nio-8080-exec-3] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  All Saints
+End    Bayswater
+From All Saints take the Docklands Light Railway to Bank for 5 stops.
+From Bank take the Waterloo and City to Waterloo for 1 stop.
+From Waterloo take the Jubilee to Baker Street for 4 stops.
+From Baker Street take the Circle to Bayswater for 3 stops.
+Changes = 3
+Total stops = 13
+
+
+2019-12-04 10:24:10.786  INFO 5289 --- [http-nio-8080-exec-4] c.r.ctrl.RoutePlannerController          : making a route query: start = Aldgate East --> dest = Arsenal
+2019-12-04 10:24:10.786  INFO 5289 --- [http-nio-8080-exec-4] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 10:24:10.787  INFO 5289 --- [http-nio-8080-exec-4] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Aldgate East
+End    Arsenal
+From Aldgate East take the Hammersmith and City to King's Cross St. Pancras for 5 stops.
+From King's Cross St. Pancras take the Piccadilly to Arsenal for 3 stops.
+Changes = 1
+Total stops = 8
+
+
+2019-12-04 10:44:29.521  WARN 5289 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m38s372ms).
+2019-12-04 11:01:19.041  INFO 5289 --- [http-nio-8080-exec-6] c.r.ctrl.RoutePlannerController          : making a route query: start = Aldgate East --> dest = Barking
+2019-12-04 11:01:19.043  INFO 5289 --- [http-nio-8080-exec-6] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 11:01:19.043  INFO 5289 --- [http-nio-8080-exec-6] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Aldgate East
+End    Barking
+From Aldgate East take the Hammersmith and City to Liverpool Street for 1 stop.
+From Liverpool Street take the Central to Stratford for 3 stops.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the District to Barking for 4 stops.
+Changes = 3
+Total stops = 9
+
+
+Start  Aldgate East
+End    Barking
+From Aldgate East take the District to Mile End for 3 stops.
+From Mile End take the Central to Stratford for 1 stop.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the District to Barking for 4 stops.
+Changes = 3
+Total stops = 9
+
+
+Start  Aldgate East
+End    Barking
+From Aldgate East take the Hammersmith and City to Mile End for 3 stops.
+From Mile End take the Central to Stratford for 1 stop.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the District to Barking for 4 stops.
+Changes = 3
+Total stops = 9
+
+
+Start  Aldgate East
+End    Barking
+From Aldgate East take the Hammersmith and City to Liverpool Street for 1 stop.
+From Liverpool Street take the Central to Stratford for 3 stops.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the Hammersmith and City to Barking for 4 stops.
+Changes = 3
+Total stops = 9
+
+
+Start  Aldgate East
+End    Barking
+From Aldgate East take the District to Mile End for 3 stops.
+From Mile End take the Central to Stratford for 1 stop.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the Hammersmith and City to Barking for 4 stops.
+Changes = 3
+Total stops = 9
+
+
+Start  Aldgate East
+End    Barking
+From Aldgate East take the Hammersmith and City to Mile End for 3 stops.
+From Mile End take the Central to Stratford for 1 stop.
+From Stratford take the Jubilee to West Ham for 1 stop.
+From West Ham take the Hammersmith and City to Barking for 4 stops.
+Changes = 3
+Total stops = 9
+
+
+2019-12-04 11:02:51.432  INFO 5289 --- [http-nio-8080-exec-8] c.r.ctrl.RoutePlannerController          : making a route query: start = Angel --> dest = Barons Court
+2019-12-04 11:02:51.433  INFO 5289 --- [http-nio-8080-exec-8] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 11:02:51.445  INFO 5289 --- [http-nio-8080-exec-8] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Angel
+End    Barons Court
+From Angel take the Northern to Warren Street for 3 stops.
+From Warren Street take the Victoria to Green Park for 2 stops.
+From Green Park take the Piccadilly to Barons Court for 6 stops.
+Changes = 2
+Total stops = 11
+
+
+Start  Angel
+End    Barons Court
+From Angel take the Northern to Euston for 2 stops.
+From Euston take the Victoria to Green Park for 3 stops.
+From Green Park take the Piccadilly to Barons Court for 6 stops.
+Changes = 2
+Total stops = 11
+
+
+Start  Angel
+End    Barons Court
+From Angel take the Northern to King's Cross St. Pancras for 1 stop.
+From King's Cross St. Pancras take the Victoria to Green Park for 4 stops.
+From Green Park take the Piccadilly to Barons Court for 6 stops.
+Changes = 2
+Total stops = 11
+
+
+2019-12-04 11:03:30.224  INFO 5289 --- [http-nio-8080-exec-9] c.r.ctrl.RoutePlannerController          : making a route query: start = Alperton --> dest = Baker Street
+2019-12-04 11:03:30.224  INFO 5289 --- [http-nio-8080-exec-9] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 11:03:30.224  INFO 5289 --- [http-nio-8080-exec-9] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Alperton
+End    Baker Street
+From Alperton take the Piccadilly to Rayners Lane for 4 stops.
+From Rayners Lane take the Metropolitan to Harrow-on-the-Hill for 2 stops.
+From Harrow-on-the-Hill take the Metropolitan to Baker Street for 5 stops.
+Changes = 2
+Total stops = 11
+
+
+2019-12-04 11:15:33.265  INFO 5289 --- [http-nio-8080-exec-9] c.r.ctrl.RoutePlannerController          : making a route query: start = Alperton --> dest = Arsenal
+2019-12-04 11:15:33.266  INFO 5289 --- [http-nio-8080-exec-9] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 11:15:33.266  INFO 5289 --- [http-nio-8080-exec-9] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Alperton
+End    Arsenal
+From Alperton take the Piccadilly to Rayners Lane for 4 stops.
+From Rayners Lane take the Metropolitan to Harrow-on-the-Hill for 2 stops.
+From Harrow-on-the-Hill take the Metropolitan to King's Cross St. Pancras for 8 stops.
+From King's Cross St. Pancras take the Piccadilly to Arsenal for 3 stops.
+Changes = 3
+Total stops = 17
+
+
+2019-12-04 11:40:32.343  INFO 5289 --- [http-nio-8080-exec-2] c.r.ctrl.RoutePlannerController          : making a route query: start = Angel --> dest = Arsenal
+2019-12-04 11:40:32.344  INFO 5289 --- [http-nio-8080-exec-2] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 11:40:32.344  INFO 5289 --- [http-nio-8080-exec-2] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Angel
+End    Arsenal
+From Angel take the Northern to King's Cross St. Pancras for 1 stop.
+From King's Cross St. Pancras take the Piccadilly to Arsenal for 3 stops.
+Changes = 1
+Total stops = 4
+
+
+2019-12-04 11:40:49.431  INFO 5289 --- [http-nio-8080-exec-3] c.r.ctrl.RoutePlannerController          : making a route query: start = Bank --> dest = Beckton
+2019-12-04 11:40:49.432  INFO 5289 --- [http-nio-8080-exec-3] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2019-12-04 11:40:49.432  INFO 5289 --- [http-nio-8080-exec-3] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Bank
+End    Beckton
+From Bank take the Northern to London Bridge for 1 stop.
+From London Bridge take the Jubilee to Canning Town for 5 stops.
+From Canning Town take the Docklands Light Railway to Beckton for 8 stops.
+Changes = 2
+Total stops = 14
+
+
+Start  Bank
+End    Beckton
+From Bank take the Central to Stratford for 4 stops.
+From Stratford take the Jubilee to Canning Town for 2 stops.
+From Canning Town take the Docklands Light Railway to Beckton for 8 stops.
+Changes = 2
+Total stops = 14
+
+
+2020-01-05 11:25:33.814  INFO 18000 --- [main] com.routeplanner.MainAppApplication      : Starting MainAppApplication on Womble1 with PID 18000 (C:\j8oxygenj2ee_rp2_workspace\RoutePlannerBase2\target\classes started by Paul in C:\j8oxygenj2ee_rp2_workspace\RoutePlannerBase2)
+2020-01-05 11:25:33.818  INFO 18000 --- [main] com.routeplanner.MainAppApplication      : No active profile set, falling back to default profiles: default
+2020-01-05 11:25:34.695  INFO 18000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-05 11:25:34.822  INFO 18000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114ms. Found 7 repository interfaces.
+2020-01-05 11:25:35.509  INFO 18000 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e7666406] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-05 11:25:36.137  INFO 18000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-01-05 11:25:36.183  INFO 18000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-05 11:25:36.183  INFO 18000 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-01-05 11:25:36.324  INFO 18000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-05 11:25:36.325  INFO 18000 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2428 ms
+2020-01-05 11:25:36.582  INFO 18000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-05 11:25:37.300  INFO 18000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-05 11:25:37.428  INFO 18000 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-01-05 11:25:37.602  INFO 18000 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2020-01-05 11:25:37.605  INFO 18000 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-01-05 11:25:37.905  INFO 18000 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-01-05 11:25:38.212  INFO 18000 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-05 11:25:45.472  INFO 18000 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-05 11:25:46.006  INFO 18000 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-01-05 11:25:46.722  INFO 18000 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-05 11:25:46.793  WARN 18000 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-05 11:25:47.107 ERROR 18000 --- [main] org.apache.catalina.util.LifecycleBase   : Failed to start component [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.routeplanner.MainAppApplication.main(MainAppApplication.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:437)
+	at sun.nio.ch.Net.bind(Net.java:429)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 20 common frames omitted
+
+2020-01-05 11:25:47.115  INFO 18000 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-01-05 11:25:47.125  INFO 18000 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-01-05 11:25:47.127 ERROR 18000 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2020-01-05 11:25:47.130  INFO 18000 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-05 11:25:47.132  INFO 18000 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-01-05 11:25:47.135  INFO 18000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-01-05 11:25:47.146  INFO 18000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-01-05 11:26:46.063  INFO 15620 --- [main] com.routeplanner.MainAppApplication      : Starting MainAppApplication on Womble1 with PID 15620 (C:\j8oxygenj2ee_rp2_workspace\RoutePlannerBase2\target\classes started by Paul in C:\j8oxygenj2ee_rp2_workspace\RoutePlannerBase2)
+2020-01-05 11:26:46.066  INFO 15620 --- [main] com.routeplanner.MainAppApplication      : No active profile set, falling back to default profiles: default
+2020-01-05 11:26:46.848  INFO 15620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-05 11:26:46.991  INFO 15620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127ms. Found 7 repository interfaces.
+2020-01-05 11:26:47.855  INFO 15620 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f2b4b744] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-05 11:26:48.497  INFO 15620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-01-05 11:26:48.536  INFO 15620 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-05 11:26:48.537  INFO 15620 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-01-05 11:26:48.666  INFO 15620 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-05 11:26:48.666  INFO 15620 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2518 ms
+2020-01-05 11:26:48.895  INFO 15620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-05 11:26:49.743  INFO 15620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-05 11:26:49.853  INFO 15620 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-01-05 11:26:50.035  INFO 15620 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.11.Final}
+2020-01-05 11:26:50.037  INFO 15620 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-01-05 11:26:50.383  INFO 15620 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-01-05 11:26:50.663  INFO 15620 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-05 11:26:57.743  INFO 15620 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-05 11:26:58.264  INFO 15620 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2020-01-05 11:26:58.915  INFO 15620 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-05 11:26:58.990  WARN 15620 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-05 11:26:59.305  INFO 15620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-01-05 11:26:59.307  INFO 15620 --- [main] com.routeplanner.MainAppApplication      : Started MainAppApplication in 14.595 seconds (JVM running for 28.425)
+2020-01-05 11:40:01.867  INFO 15620 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-05 11:40:01.868  INFO 15620 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-01-05 11:40:01.976  INFO 15620 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 108 ms
+2020-01-05 11:40:08.894  INFO 15620 --- [http-nio-8081-exec-2] c.r.ctrl.RoutePlannerController          : making a route query: start = Amersham --> dest = Arsenal
+2020-01-05 11:40:08.940  INFO 15620 --- [http-nio-8081-exec-2] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2020-01-05 11:40:08.968  INFO 15620 --- [http-nio-8081-exec-2] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Amersham
+End    Arsenal
+From Amersham take the Metropolitan to Chalfont and Latimer for 1 stop.
+From Chalfont and Latimer take the Metropolitan to King's Cross St. Pancras for 16 stops.
+From King's Cross St. Pancras take the Piccadilly to Arsenal for 3 stops.
+Changes = 2
+Total stops = 20
+
+
+2020-01-05 11:40:14.049  INFO 15620 --- [http-nio-8081-exec-3] c.r.ctrl.RoutePlannerController          : making a route query: start = Amersham --> dest = Bayswater
+2020-01-05 11:40:14.049  INFO 15620 --- [http-nio-8081-exec-3] com.routeplanner.engine.RoutePlanner     : Route Planner has been set up successfully......
+2020-01-05 11:40:14.051  INFO 15620 --- [http-nio-8081-exec-3] c.r.client.service.TravelInfoService     : Journey Display:  
+Start  Amersham
+End    Bayswater
+From Amersham take the Metropolitan to Chalfont and Latimer for 1 stop.
+From Chalfont and Latimer take the Metropolitan to Baker Street for 13 stops.
+From Baker Street take the Circle to Bayswater for 3 stops.
+Changes = 2
+Total stops = 17
+
+
+2020-01-05 11:42:20.360  INFO 15620 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-05 11:42:20.365  INFO 15620 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-01-05 11:42:20.372  INFO 15620 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-01-05 11:42:20.395  INFO 15620 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

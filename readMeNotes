@@ -1,0 +1,293 @@
+***************************************************************
+***************************************************************
+******* ROUTEPLANNER 2019 - React, Java, MySQL ****************
+***************************************************************
+***************************************************************
+HOW TO RUN ROUTEPLANNER APP
+
+--> JavaWorkspace3/MainApp
+    ./mvnw spring-boot:run
+
+--> internal react app
+    react-routeplanner-app
+    npm start
+
+----------------------------------
+----------------------------------
+SET ROUTEPLANNER UP STANDALONE
+
+--> install npx + npm
+--> use eclipse with jdk11
+--> install MySQL with root password
+
+----------------------------------
+----------------------------------
+ROUTE PLANNER JOBS END DEC, 2019
+
+FRONT END CHANGES
+- clean out react part and remove unused copied files
+- revise react tables from vidly mosh project
+
+
+- DONE research table lists: react-vidly-backend/Vidly
+       --> table layout
+       --> delete button
+       --> 2 forms on single page
+       --> sort, (order), pagination                    
+- Find Route Screen
+   --> start and finish combos should have a promt
+       which JOI understands is a blank value 
+   --> save to route query
+- View Basket
+   --> add ticket form and submit backend save method
+       ensure page loads basket contents
+   --> list tickets in basket:
+       ie start, dest, date purchase, date travel, checkbox
+   --> apply deletion of checked boxes
+       & apply to backend
+   --> apply react paging    
+- Contact Details
+   --> improve presentation to use full screen
+   --> save to database and ensure contact_details and
+       user are saved correctly
+- Payment Details Screen
+  --> list payment methods
+  --> add in remove payment type functionality (restrict to 3)  
+  --> select 1 and process payment, otherwise blank out submit 
+      button
+      --> save payment
+      --> redirect to sale confirmation screen
+- sale confirmation
+  --> table displaying details of the sale
+  --> button to find another route
+- add purchase history screen
+  --> navbar 
+  --> button to find another route
+  --> display history with paging
+- registration screen
+  --> form and save to db  
+- distinguish between user types (ignore non-conformers):
+  --> Admin - everything
+      --> hide 'Register' on navbar
+      --> ensure logout displays          
+  --> Member - no admin stuff
+      --> hide 'Admin' on navbar 
+      --> hide 'Register' on navbar 
+      --> ensure logout displays                    
+  --> User
+      --> hide 'Admin' on navbar 
+      --> hide 'Purchase History' on navbar 
+      --> ensure login displays    
+- admin pages  [at least implement skeletons]
+  --> Manager
+  --> Add / View Ticket types system wide
+  --> search a user and view their payment types 
+  --> search a user and view their purchase history 
+- login page
+  --> complete application of dummy login mechanism
+      and handle in navbar + APP
+  --> add in protection using ProtectedRoute impls
+  --> remove history from chrome on mac!
+  --> post login, if this is a first time pass,
+      forward to change pass screen:
+      [at least implement skeleton]
+      --> change pass screen
+          --> form and save to user table  
+          --> button to progress to find another route
+- beautify interface 
+  eg. with 
+  --> images as appropriate
+  --> css
+
+          
+BACKEND CHANGES
+- implement transactions at service level 
+- ensure quality of controller code
+  [improved exception handling needs to be in the controllers]
+- service, integration and controller tests (3 types) 
+  for shopping part
+- javadocs for shopping package
+- smarten legacy part of backend code superficially
+
+----------------------------------
+----------------------------------
+ROUTEPLANNER EXTENSIONS - post Dec 12th, 2019
+
+--> functionality left over from above list
+--> apply mosh style error handling in front end
+--> react internationalization
+--> Add security: authentication and authorization
+    - frontend (based on dummy rp and Mosh)
+    - backend 
+--> react unit tests
+--> apply to mongodb database instead of MySQL
+--> convert to microservices
+    --> data loader
+    --> route calculation engine
+    --> central webapp for screen flow 
+--> apply poc for introduction to docker, kubenetes, 
+    jenkins
+
+----------------------------------
+----------------------------------
+ROUTE PLANNER ENDPOINTS (working 19/11/19)
+
+Get stations - http://localhost:8080/route/stations
+Get Route - http://localhost:8080/route/Farringdon/Piccadilly Circus
+General access - http://localhost:8080/route/
+User access - http://localhost:8080/route/user
+Save Contact Details - http://localhost:8080/reg/contact-details/persist
+Get a user by username - ????
+Get route queries for user - http://localhost:8080/route/query/1
+Save user - http://localhost:8080/reg/user/add
+Get Users - http://localhost:8080/reg/users
+Update contact details - http://localhost:8080/reg/contact-details/12
+Get a user by id - http://localhost:8080/reg/user/id/2
+Add Route - http://localhost:8080/route/add
+Add Ticket - http://localhost:8080/ticket/admin/add
+Get all tickets - http://localhost:8080/ticket/all
+Delete ticket - http://localhost:8080/ticket/admin/delete/1
+Get current basket or make one - http://localhost:8080/basket/current/2
+Get existing contact details for user - http://localhost:8080/reg/contact/4
+Add basket with no tickets - http://localhost:8080/basket/add
+Save existing basket with new ticket - http://localhost:8080/basket/update/18
+Get payment methods for user - http://localhost:8080/order/member/pm/1
+Add payment method - http://localhost:8080/order/member/pm/add
+Get orders for user - ????
+Post Order - http://localhost:8080/order/member/purchase
+
+----------------------------------
+----------------------------------
+MYSQL
+
+root / J03R00t123!
+
+Configure:
+spring.jpa.hibernate.ddl-auto
+
+Database: new_routeplanner_shopping  (automatic JPA)
+
+----------------------------------
+----------------------------------
+PREPOPULATE DATABASE
+
+For various reasons these have not be added to data.sql,
+not yet anyway.
+
+--> insert users
+    insert into user values (1, 1, 'pass', 'ROLE_USER', 'user'); 
+    insert into user values (2, 1, 'pass', 'ROLE_ADMIN', 'admin');
+ 
+--> insert route query data:
+    insert into route_query values(1, 'Farringdon', 'Oxford Circus', 1);
+
+--> insert tickets, for example:
+    insert into ticket values(1, 3, 1, 'dest1', 4, 'start1', 2, '2019-10-04' ); 
+    insert into ticket values(3, 8, 1, 'dest2', 3, 'start2', 1, '2019-10-05' );
+    insert into ticket values(7, 1, 1, 'dest3', 2, 'start3', 2, '2019-10-06' );
+    insert into ticket values(13, 2, 1, 'dest4', 1, 'start4', 1, '2019-10-07' );
+  
+--> insert basket full of tickets:
+    --> insert into basket values (18, 1, 17)
+    --> insert tickets into basket:  
+        insert into basket_tickets values (18, 1);
+        insert into basket_tickets values (18, 3);
+        insert into basket_tickets values (18, 7);
+        insert into basket_tickets values (18, 13);
+        
+ --> insert contact details for user 1:
+    insert into contact_details values (
+    17, 'ad1', 'add2', 'add3', 'GHlasgow', 'countryV', 'dsf@sdf.com', 
+    'fullnamneP', '987875', '765654', '435345', 'region', 'title', 1);
+        
+ --> insert p[ayment method for user 1:
+     insert into payment_method values(1, '1234132423412344', 2, 
+     '2022-10-04', 'Mr X Bloggs', '456', null, 1);
+ 
+ --> insert an order for basket 18: 
+     insert into orders values(1, 1, '2019-10-04 09:39:20', 18, 1);
+
+----------------------------------
+----------------------------------
+DATABASE SELECT STATEMENTS AND VIEWS
+
+--> check that user 1 has an empty basket created automatically
+select 
+    b.id basketId, 
+    b.open basketOpen,
+    u.roles,
+    u.user_name,
+    cd.city,
+    cd.id contactDetailsId
+ from Basket B
+ inner join contact_details cd on cd.id = b.contact_details_id
+ inner join user u on u.id = cd.user_id
+ where u.id = 1
+
+--> List the tickets in a user's basket:
+ select 
+    b.id basketId, 
+    b.open basketOpen,
+    u.roles,
+    u.user_name,
+    cd.city,
+    t.num_units numTickets,
+    t.start,
+    t.destination dest
+ from Basket B
+ inner join basket_tickets bt on bt.basket_id = b.id
+ inner join ticket t on bt.tickets_id = t.id
+ inner join contact_details cd on cd.id = b.contact_details_id
+ inner join user u on u.id = cd.user_id
+ where u.id = 2
+
+--> List all tickets in a specific basket: 
+ select b.id basketId, t.*
+ from Basket B
+ inner join basket_tickets bt on bt.basket_id = b.id
+ inner join ticket t on bt.tickets_id = t.id
+ where b.id = 18
+
+--> Get all payment methods for user 1: 
+ select u.id as userId, pm.*
+ from user u
+ inner join payment_method pm on pm.user_id = u.id
+ where u.id = 1
+ 
+ --> fetch all tickets on the system, regardless of basket or user
+ select
+    o.id orderId,
+    o.purchased purchased,
+    b.id basketId, 
+    b.open basketOpen,
+    u.roles,
+    u.user_name,
+    cd.city,
+    t.num_units numTickets,
+    t.start,
+    t.destination dest,
+    u.id userId
+ from orders o
+ inner join basket b on b.id = o.basket_id
+ inner join basket_tickets bt on bt.basket_id = b.id
+ inner join ticket t on bt.tickets_id = t.id
+ inner join contact_details cd on cd.id = b.contact_details_id
+ inner join user u on u.id = cd.user_id
+
+----------------------------------
+----------------------------------
+LATER RESEARCH
+  
+- security research / links (Jugtours, Mosh etc)
+- microservices links:
+  https://www.udemy.com/course/spring-boot-microservices-with-spring-cloud-beginner-to-guru/
+- log revision: https://www.tutorialspoint.com/log4j/log4j_logging_files.htm
+
+----------------------------------
+----------------------------------
+
+
+
+
+
+

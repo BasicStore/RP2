@@ -1,0 +1,66 @@
+-----------------------
+WINDOWS SETUP
+-----------------------
+RUN MYSQL CLIENT
+
+Set Mysql on path in current shell:
+set path=%PATH%;C:\Program Files\MySQL\MySQL Server 8.0\bin;
+
+-----------------------
+CMD WINDOW RCLICK
+
+cmd /c"echo off|clip"
+cmd /c"echo on|clip"
+OR
+sfc /scannow
+-----------------------
+POSTMAN ACCESS
+
+https://identity.getpostman.com/login?addAccount=1
+https://web.postman.co/collections/5278619-4fea6454-5e57-4f3e-a4be-917761b8de76?version=latest&workspace=ecfd022b-47c2-42fe-8882-5a514cbd1ef4#118393a8-7ac4-4a92-b78c-2e79cccf34ed
+
+EXAMPLE USING CURL:
+curl -D- -u root:J03R00t123! -X GET -H "Content-Type: application/json" "http://localhost:8085/route/stations"
+
+PROBLEM - react looking for:
+http://localhost:3000/route/stations
+
+-----------------------
+
+UNIX PORT IN USE QUERY:
+lsof -i:8080
+
+-----------------------
+SUMMARY OF CHANGES FOR WINDOWS
+
+--> CODE
+    --> BACKEND: server.port=8081
+                 --> mvn spring-boot:run
+                 --> first time: 
+                     --> StringUtils
+                     --> pom: maven plugin properties (for eclipse bug) 
+                 --> mvn quick fix
+    --> FRONTEND: package.json 
+                  --> "proxy": "http://localhost:8081",
+                       --> first time:
+                           --> [https://www.codecademy.com/articles/react-setup-i] 
+                               --> [npm i react-scripts]
+                           --> npm install
+                               --> npm audit fix 
+                           --> npm install --save-dev babel-core babel-loader babel-preset-react
+                           --> npm update
+                           --> npm start [but change to chrome!]              
+                  
+    
+--> Set Mysql on path in current shell as env var is not picked up:
+    set path=%PATH%;C:\Program Files\MySQL\MySQL Server 8.0\bin;
+    
+--> files:
+    this: other-setup.txt 
+
+-----------------------
+
+
+
+
+
